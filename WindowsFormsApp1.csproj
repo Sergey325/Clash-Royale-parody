@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{637A2333-3BA2-494B-B502-EDD0C3C2267B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WindowsFormsApp1</RootNamespace>
+    <AssemblyName>WindowsFormsApp1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Dataviz.WinForms, Version=2.2.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.Dataviz.WinForms.2.2.0\lib\Bunifu.Dataviz.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.Dataviz.WinForms.2.2.0\lib\Bunifu.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGauge, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLoader, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPages, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPanel, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRating, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuRating.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSeparator, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShapes, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuShapes.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSlider, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSnackbar, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuSnackbar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextBox, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToolTip, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuUserControl, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.Deprecated, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomControls\AdvComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\CustomPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\movableLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataModel\Card.cs" />
+    <Compile Include="DataModel\CardCollection.cs" />
+    <Compile Include="DataModel\Clan.cs" />
+    <Compile Include="DataModel\GameContext.cs" />
+    <Compile Include="DataModel\PlrInfo.cs" />
+    <Compile Include="DataModel\Log.cs" />
+    <Compile Include="DataModel\Player.cs" />
+    <Compile Include="DataModel\Searching.cs" />
+    <Compile Include="Forms\createClan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\createClan.Designer.cs">
+      <DependentUpon>createClan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\customPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\JoinToClan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\JoinToClan.Designer.cs">
+      <DependentUpon>JoinToClan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\LabelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\WinLose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WinLose.Designer.cs">
+      <DependentUpon>WinLose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\MovablePBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Migrations\202202021540472_first.cs" />
+    <Compile Include="Migrations\202202021540472_first.Designer.cs">
+      <DependentUpon>202202021540472_first.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202021542221_plrInfo.cs" />
+    <Compile Include="Migrations\202202021542221_plrInfo.Designer.cs">
+      <DependentUpon>202202021542221_plrInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202031145419_CardAnnotations.cs" />
+    <Compile Include="Migrations\202202031145419_CardAnnotations.Designer.cs">
+      <DependentUpon>202202031145419_CardAnnotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202031151583_OtherAnnotations.cs" />
+    <Compile Include="Migrations\202202031151583_OtherAnnotations.Designer.cs">
+      <DependentUpon>202202031151583_OtherAnnotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202031208578_Searchings.cs" />
+    <Compile Include="Migrations\202202031208578_Searchings.Designer.cs">
+      <DependentUpon>202202031208578_Searchings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202031217458_SearchingsAddForeignKey.cs" />
+    <Compile Include="Migrations\202202031217458_SearchingsAddForeignKey.Designer.cs">
+      <DependentUpon>202202031217458_SearchingsAddForeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202041135213_IconName.cs" />
+    <Compile Include="Migrations\202202041135213_IconName.Designer.cs">
+      <DependentUpon>202202041135213_IconName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SignInUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SignInUp.Designer.cs">
+      <DependentUpon>SignInUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyContext.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\createClan.resx">
+      <DependentUpon>createClan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\customPictureBox.resx">
+      <DependentUpon>customPictureBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\JoinToClan.resx">
+      <DependentUpon>JoinToClan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WinLose.resx">
+      <DependentUpon>WinLose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SignInUp.resx">
+      <DependentUpon>SignInUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202021540472_first.resx">
+      <DependentUpon>202202021540472_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202021542221_plrInfo.resx">
+      <DependentUpon>202202021542221_plrInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202031145419_CardAnnotations.resx">
+      <DependentUpon>202202031145419_CardAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202031151583_OtherAnnotations.resx">
+      <DependentUpon>202202031151583_OtherAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202031208578_Searchings.resx">
+      <DependentUpon>202202031208578_Searchings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202031217458_SearchingsAddForeignKey.resx">
+      <DependentUpon>202202031217458_SearchingsAddForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202041135213_IconName.resx">
+      <DependentUpon>202202041135213_IconName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clash-of-clans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3099889.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clash_royale_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trophy_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize_window_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer_60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key_2_60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spartan_helmet_38px.png" />
+    <None Include="Resources\skull_38px.png" />
+    <None Include="Resources\school_director_38px.png" />
+    <None Include="Resources\person_female_38px.png" />
+    <None Include="Resources\mummy_38px.png" />
+    <None Include="Resources\zyro-image.png" />
+    <None Include="Resources\zyro-image %281%29.png" />
+    <None Include="Resources\zyro-image %282%29 %281%29.png" />
+    <None Include="Resources\Spooky townArena1.png" />
+    <None Include="Resources\Royale ArenaArena2.png" />
+    <None Include="Resources\Traning CampArena0.png" />
+    <None Include="Resources\Legendary ArenaArena5.png" />
+    <None Include="Resources\monophy.gif" />
+    <None Include="Resources\Minions.png" />
+    <None Include="Resources\Zap.png" />
+    <None Include="Resources\SkeletonDragons.png" />
+    <None Include="Resources\MP.png" />
+    <None Include="Resources\Valk.png" />
+    <None Include="Resources\Tornado.png" />
+    <None Include="Resources\Tesla.png" />
+    <None Include="Resources\Skellies.png" />
+    <None Include="Resources\Rocket.png" />
+    <None Include="Resources\Princess.png" />
+    <None Include="Resources\Prince.png" />
+    <None Include="Resources\PEKKA.png" />
+    <None Include="Resources\Musk.png" />
+    <None Include="Resources\MegaKnight.png" />
+    <None Include="Resources\Log.png" />
+    <None Include="Resources\snowflake_64px.png" />
+    <None Include="Resources\trash_64px.png" />
+    <None Include="Resources\online_support_64px.png" />
+    <None Include="Resources\person_female_64px.png" />
+    <None Include="Resources\the_dragon_team_64px.png" />
+    <None Include="Resources\skull_64px.png" />
+    <None Include="Resources\manager_64px.png" />
+    <None Include="Resources\mugman_64px.png" />
+    <None Include="Resources\spartan_helmet_64px.png" />
+    <None Include="Resources\pentagram_devil_64px.png" />
+    <None Include="Resources\mummy_64px.png" />
+    <None Include="Resources\school_director_64px.png" />
+    <None Include="Resources\lord_64px.png" />
+    <None Include="Resources\pericles_64px.png" />
+    <None Include="Resources\transparent.png" />
+    <None Include="Resources\multiply_30px.png" />
+    <None Include="Resources\multiply_38px.png" />
+    <None Include="Resources\multiply_64px.png" />
+    <None Include="Resources\sword_64px.png" />
+    <None Include="Resources\people_64px.png" />
+    <None Include="Resources\leaderboard_64px.png" />
+    <None Include="Resources\profilek_64px.png" />
+    <None Include="Resources\pngegg %282%29 %281%29.png" />
+    <None Include="Resources\pngegg %281%29 %281%29.png" />
+    <None Include="Resources\pngegg %283%29.png" />
+    <None Include="Resources\pngegg %284%29 %281%29.png" />
+    <None Include="Resources\pngegg %284%29.png" />
+    <None Include="Resources\pngegg %282%29.png" />
+    <None Include="Resources\pngegg %281%29.png" />
+    <None Include="Resources\pngegg.png" />
+    <None Include="Resources\sword_50px.png" />
+    <None Include="Resources\profile_64px.png" />
+    <None Include="Resources\crossed_arrows_100px.png" />
+    <None Include="Resources\crossed_arrows_30px.png" />
+    <None Include="Resources\Battle_80px.png" />
+    <None Include="Resources\icons8_battle_32px.png" />
+    <None Include="Resources\icons8_battle_24px_1.png" />
+    <None Include="Resources\icons8_battle_50px.png" />
+    <None Include="Resources\icons8_crossed_axes_30px.png" />
+    <None Include="Resources\icons8_back_96px_4 %281%29_1.png" />
+    <None Include="Resources\icons8_forward_96px_2 %281%29_1.png" />
+    <None Include="Resources\search_50px.png" />
+    <None Include="Resources\pngwing.com %281%29.png" />
+    <None Include="Resources\pngwing.com.png" />
+    <None Include="Resources\pngwing.com %283%29.png" />
+    <None Include="Resources\pngwing.com %282%29.png" />
+    <None Include="Resources\test_account_38px.png" />
+    <None Include="Resources\test_account_36px.png" />
+    <None Include="Resources\test_account_30px.png" />
+    <None Include="Resources\test_account_25px.png" />
+    <None Include="Resources\test_account_48px.png" />
+    <None Include="Resources\test_account_64px.png" />
+    <None Include="Resources\test_account_96px.png" />
+    <None Include="Resources\back_96px.png" />
+    <None Include="Resources\forward_96px.png" />
+    <None Include="Resources\1back_96px-removebg-preview.png" />
+    <None Include="Resources\1back_96px-removebg-preview %281%29.png" />
+    <None Include="Resources\1forward_96px-removebg-preview.png" />
+    <None Include="Resources\1forward_96px-removebg-preview1.png" />
+    <None Include="Resources\26x40Back.png" />
+    <None Include="Resources\1forward_96px.png" />
+    <None Include="Resources\back29x45.png" />
+    <None Include="Resources\forward29x45.png" />
+    <None Include="Resources\icons8_delete_25px.png" />
+    <None Include="Resources\icons8_clash_of_clans_96px.png" />
+    <None Include="Resources\icons8_tom_clancy_division_2_96px.png" />
+    <None Include="Resources\icons8_fairytale_96px.png" />
+    <None Include="Resources\icons8_Clash_Royale_96px.png" />
+    <None Include="Resources\icons8_clash_of_clans_96px_1.png" />
+    <None Include="Resources\icons8_defense_96px.png" />
+    <None Include="Resources\icons8_defense_96px_1.png" />
+    <None Include="Resources\icons8_clash_of_clans_96px_2.png" />
+    <None Include="Resources\Clash Royale_96px.png" />
+    <None Include="Resources\Clash Royale_96px %281%29.png" />
+    <None Include="Resources\account_64px.png" />
+    <None Include="Resources\edit_64px.png" />
+    <None Include="Resources\exit_sign_64px.png" />
+    <None Include="Resources\hades_64px.png" />
+    <None Include="Resources\fire_heart_64px.png" />
+    <None Include="Resources\gachi_64px.png" />
+    <None Include="Resources\balthazar_king_magician_64px.png" />
+    <None Include="Resources\caspar_king_magician_64px.png" />
+    <None Include="Resources\coffin_face_64px.png" />
+    <None Include="Resources\homebrew_64px.png" />
+    <None Include="Resources\crypt_of_the_necrodancer_64px.png" />
+    <None Include="Resources\greek_god_hermes_64px.png" />
+    <None Include="Resources\greek_god_zeus_64px.png" />
+    <None Include="Resources\christmas_girl_64px.png" />
+    <None Include="Resources\christmas_boy_64px.png" />
+    <None Include="Resources\bird_64px.png" />
+    <None Include="Resources\darth_vader_64px.png" />
+    <None Include="Resources\detective_64px.png" />
+    <None Include="Resources\jewel_64px.png" />
+    <None Include="Resources\animation_64px.png" />
+    <None Include="Resources\administrator_male_64px.png" />
+    <None Include="Resources\customer_64px.png" />
+    <None Include="Resources\Deceit_64px.png" />
+    <None Include="Resources\Biohazard_64px.png" />
+    <None Include="Resources\crown_64px.png" />
+    <None Include="Resources\Call Of Duty Black Ops 4_64px.png" />
+    <None Include="Resources\Barrel.png" />
+    <None Include="Resources\Cannon.png" />
+    <None Include="Resources\ElectroSpirit.png" />
+    <None Include="Resources\Fireball.png" />
+    <None Include="Resources\GobGang.png" />
+    <None Include="Resources\Graveyard.png" />
+    <None Include="Resources\IceGolem.png" />
+    <None Include="Resources\IceSpirit.png" />
+    <None Include="Resources\IceWiz.png" />
+    <None Include="Resources\eBarbs.png" />
+    <None Include="Resources\Arrows.png" />
+    <None Include="Resources\Bandit.png" />
+    <None Include="Resources\Balloon.png" />
+    <None Include="Resources\DarkPrince.png" />
+    <None Include="Resources\BarbBarrel.png" />
+    <None Include="Resources\Hog.png" />
+    <None Include="Resources\BattleHealer.png" />
+    <None Include="Resources\giphy.gif" />
+    <None Include="Resources\Electro ValleyArena4.png" />
+    <None Include="Resources\Ice PeakArena3.png" />
+    <None Include="Resources\imgonline-com-ua-Replace-color-zu4Sae6q3cZV__1_-removebg-preview.png" />
+    <None Include="Resources\4879232-middle__1_-removebg-preview.png" />
+    <None Include="Resources\back_50px.png" />
+    <None Include="Resources\back_50px_purple.png" />
+    <None Include="Resources\Check Circle_50px.png" />
+    <None Include="Resources\gachi_38px.png" />
+    <None Include="Resources\greek_god_hermes_38px.png" />
+    <None Include="Resources\greek_god_zeus_38px.png" />
+    <None Include="Resources\balthazar_king_magician_38px.png" />
+    <None Include="Resources\caspar_king_magician_38px.png" />
+    <None Include="Resources\darth_vader_38px.png" />
+    <None Include="Resources\animation_38px.png" />
+    <Content Include="Resources\key_48px.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
